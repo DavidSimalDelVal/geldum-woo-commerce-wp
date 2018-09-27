@@ -81,4 +81,4 @@ Finally:
 * Click on "Save changes"
 
 ## Donating to the Devs :)
-XMR Address : `44krVcL6TPkANjpFwS2GWvg1kJhTrN7y9heVeQiDJ3rP8iGbCd5GeA4f3c2NKYHC1R4mCgnW7dsUUUae2m9GiNBGT4T8s2X`
+GDM Address : `gELdb3b3x2R9Xu1vtugrN7aoVKYGqWSedHgEkBkhxfqy8FgX8KfL8zLMaHxdMy9tBZ7yWW8MRtQqHPmntBGsXq9k7rmRWLw45c`
