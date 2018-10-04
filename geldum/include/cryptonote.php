@@ -223,7 +223,7 @@ Copyright (c) 2018 Geldum Project
 	public function encode_address($pSpendKey, $pViewKey)
 	{
 	    // mainnet network byte is 18 (0x12)
-	    $data = "12" . $pSpendKey . $pViewKey;
+	    $data = "47" . $pSpendKey . $pViewKey;
 	    $encoded = $this->base58->encode($data);
 	    return $encoded;
 	}

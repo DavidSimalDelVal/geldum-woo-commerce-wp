@@ -99,7 +99,7 @@ class Geldum_Gateway extends WC_Payment_Gateway
 
     public function get_icon()
     {
-        return apply_filters('woocommerce_gateway_icon', "<img src='http://cdn.geldumintegrations.com/logogeldum.png' />");
+        return apply_filters('woocommerce_gateway_icon', "<img src='\../wp-content/plugins/geldum/assets/images/logogeldum.png' />");
     }
 
     public function init_form_fields()
@@ -136,7 +136,7 @@ class Geldum_Gateway extends WC_Payment_Gateway
                 'title' => __('Geldum Address', 'geldum_gateway'),
                 'label' => __('Useful for people that have not a daemon online'),
                 'type' => 'text',
-                'desc_tip' => __('Geldum Wallet Address', 'geldum_gateway')
+                'desc_tip' => 'no'
             ),
             'viewKey' => array(
                 'title' => __('Secret ViewKey', 'geldum_gateway'),
@@ -155,13 +155,13 @@ class Geldum_Gateway extends WC_Payment_Gateway
                 'title' => __('Geldum wallet RPC Host/ IP', 'geldum_gateway'),
                 'type' => 'text',
                 'desc_tip' => __('This is the Daemon Host/IP to authorize the payment with port', 'geldum_gateway'),
-                'default' => 'localhost',
+                'default' => '127.0.0.1',
             ),
             'daemon_port' => array(
                 'title' => __('Geldum wallet RPC port', 'geldum_gateway'),
                 'type' => 'text',
                 'desc_tip' => __('This is the Daemon Host/IP to authorize the payment with port', 'geldum_gateway'),
-                'default' => '21936',
+                'default' => '21937',
             ),
             'discount' => array(
                 'title' => __('% discount for using GDM', 'geldum_gateway'),
@@ -240,10 +240,10 @@ class Geldum_Gateway extends WC_Payment_Gateway
         }
         else
         {
-            $real_wallet_amount = $wallet_amount['balance'] / 1000000000000;
+            $real_wallet_amount = $wallet_amount['balance'] / 100000000000;
             $real_amount_rounded = round($real_wallet_amount, 6);
 
-            $unlocked_wallet_amount = $wallet_amount['unlocked_balance'] / 1000000000000;
+            $unlocked_wallet_amount = $wallet_amount['unlocked_balance'] / 100000000000;
             $unlocked_amount_rounded = round($unlocked_wallet_amount, 6);
 
             echo "Your balance is: " . $real_amount_rounded . " GDM </br>";
@@ -293,15 +293,11 @@ class Geldum_Gateway extends WC_Payment_Gateway
     public function check_geldum()
     {
         $geldum_address = $this->settings['geldum_address'];
-        if (strlen($geldum_address) == 95 && substr($geldum_address, 1))
-        {
-			if($this->cryptonote->verify_checksum($geldum_address))
-			{
-				return true;
-			}
+        if (strlen($geldum_address) == 98)   {
+                return true;
+            }
+            return false;
         }
-        return false;
-    }
     public function check_viewKey()
     {
         if($this->use_viewKey == 'yes')
@@ -393,7 +389,7 @@ class Geldum_Gateway extends WC_Payment_Gateway
             <!--Import Google Icon Font-->
             <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
             <link href='https://fonts.googleapis.com/css?family=Montserrat:400,800' rel='stylesheet'>
-            <link href='http://cdn.geldumintegrations.com/style.css' rel='stylesheet'>
+            <link href='\../wp-content/plugins/geldum/assets/css/style.css' rel='stylesheet'>
             <!--Let browser know website is optimized for mobile-->
                 <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
                 </head>
@@ -404,7 +400,7 @@ class Geldum_Gateway extends WC_Payment_Gateway
                 <div class='container-gdm-payment'>
                 <!-- header -->
                 <div class='header-gdm-payment'>
-                <span class='logo-gdm'><img src='http://cdn.geldumintegrations.com/logogeldum.png' /></span>
+                <span class='logo-gdm'><img src='\../wp-content/plugins/geldum/assets/images/logogeldum.png' /></span>
                 <span class='gdm-payment-text-header'><h2>GELDUM PAYMENT</h2></span>
                 </div>
                 <!-- end header -->
@@ -427,7 +423,7 @@ class Geldum_Gateway extends WC_Payment_Gateway
                 <!-- end content box -->
                 <!-- footer gdm payment -->
                 <div class='footer-gdm-payment'>
-                <a href='https://getgeldum.org' target='_blank'>Help</a> | <a href='https://getgeldum.org' target='_blank'>About Geldum</a>
+                <a href='http://geldum.org' target='_blank'>Help</a> | <a href='http://geldum.org' target='_blank'>About Geldum</a>
                 </div>
                 <!-- end footer gdm payment -->
                 </div>
@@ -472,7 +468,7 @@ class Geldum_Gateway extends WC_Payment_Gateway
             <!--Import Google Icon Font-->
             <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
             <link href='https://fonts.googleapis.com/css?family=Montserrat:400,800' rel='stylesheet'>
-            <link href='http://cdn.geldumintegrations.com/style.css' rel='stylesheet'>
+            <link href='\../wp-content/plugins/geldum/assets/css/style.css' rel='stylesheet'>
             <!--Let browser know website is optimized for mobile-->
                 <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
                 </head>
@@ -483,7 +479,7 @@ class Geldum_Gateway extends WC_Payment_Gateway
                 <div class='container-gdm-payment'>
                 <!-- header -->
                 <div class='header-gdm-payment'>
-                <span class='logo-gdm'><img src='http://cdn.geldumintegrations.com/logogeldum.png' /></span>
+                <span class='logo-gdm'><img src='\../wp-content/plugins/geldum/assets/images/logogeldum.png' /></span>
                 <span class='gdm-payment-text-header'><h2>GELDUM PAYMENT</h2></span>
                 </div>
                 <!-- end header -->
@@ -506,7 +502,7 @@ class Geldum_Gateway extends WC_Payment_Gateway
                 <!-- end content box -->
                 <!-- footer gdm payment -->
                 <div class='footer-gdm-payment'>
-                <a href='https://getgeldum.org' target='_blank'>Help</a> | <a href='https://getgeldum.org' target='_blank'>About Geldum</a>
+                <a href='http://geldum.org' target='_blank'>Help</a> | <a href='http://geldum.org' target='_blank'>About Geldum</a>
                 </div>
                 <!-- end footer gdm payment -->
                 </div>
@@ -540,7 +536,7 @@ class Geldum_Gateway extends WC_Payment_Gateway
 	return $sanatized_id;
     }
 
-    public function changeto($amount, $currency, $payment_id)
+  public function changeto($amount, $currency, $payment_id)
     {
         global $wpdb;
         // This will create a table named whatever the payment id is inside the database "WordPress"
@@ -553,18 +549,18 @@ class Geldum_Gateway extends WC_Payment_Gateway
         {
             $stored_rate = $wpdb->get_results("SELECT rate FROM $payment_id");
 
-            $stored_rate_transformed = $stored_rate[0]->rate / 100; //this will turn the stored rate back into a decimaled number
+            $stored_rate_transformed = $stored_rate[0]->rate; //this will turn the stored rate back into a decimaled number
 
             if (isset($this->discount)) {
                 $sanatized_discount = preg_replace('/[^0-9]/', '', $this->discount);
-                $discount_decimal = $sanatized_discount / 100;
-                $new_amount = $amount / $stored_rate_transformed;
+                $new_amount = $amount;
                 $discount = $new_amount * $discount_decimal;
                 $final_amount = $new_amount - $discount;
-                $rounded_amount = round($final_amount, 12);
-            } else {
-                $new_amount = $amount / $stored_rate_transformed;
-                $rounded_amount = round($new_amount, 12); //the Geldum wallet can't handle decimals smaller than 0.000000000001
+                $rounded_amount = round($final_amount, 11);
+            }
+ else {
+                $new_amount = $amount;
+                $rounded_amount = round($new_amount, 11); //the Geldum wallet can't handle decimals smaller than 0.000000000001
             }
         } else // If the row has not been created then the live exchange rate will be grabbed and stored
         {
@@ -577,18 +573,19 @@ class Geldum_Gateway extends WC_Payment_Gateway
                $new_amount = $amount / $gdm_live_price;
                $discount = $new_amount * $this->discount / 100;
                $discounted_price = $new_amount - $discount;
-               $rounded_amount = round($discounted_price, 12);
+               $rounded_amount = round($discounted_price, 11);
             }
             else
+
             {
                $new_amount = $amount / $gdm_live_price;
-               $rounded_amount = round($new_amount, 12);
+               $rounded_amount = round($new_amount, 11);
             }
+
         }
 
         return $rounded_amount;
     }
-
 
     // Check if we are forcing SSL on checkout pages
     // Custom function not required by the Gateway
@@ -651,7 +648,7 @@ class Geldum_Gateway extends WC_Payment_Gateway
          * Check if a payment has been made with this payment id then notify the merchant
          */
         $message = "We are waiting for your payment to be confirmed";
-        $amount_atomic_units = $amount * 1000000000000;
+        $amount_atomic_units = $amount * 100000000000;
         $get_payments_method = $this->geldum_daemon->get_payments($payment_id);
         if (isset($get_payments_method["payments"][0]["amount"])) {
             if ($get_payments_method["payments"][0]["amount"] >= $amount_atomic_units)
@@ -696,7 +693,7 @@ class Geldum_Gateway extends WC_Payment_Gateway
     {
         $tools = new NodeTools($this->testnet);
 
-        $amount_atomic_units = $amount * 1000000000000;
+        $amount_atomic_units = $amount * 100000000000;
 
         $outputs = $tools->get_outputs($this->address, $this->viewKey, $accept_zero_conf);
         $outs_count = count($outputs);

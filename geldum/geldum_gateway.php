@@ -44,6 +44,19 @@ function geldum_payment($links)
 
     return array_merge($plugin_links, $links);
 }
+//Configure currency
+add_filter('woocommerce_currencies','add_my_currency');
+add_filter('woocommerce_currency_symbol','add_my_currency_symbol', 10, 2);
+function add_my_currency($currencies) {
+     $currencies['GDM'] = __('Geldum','woocommerce');
+     return $currencies;
+}
+function add_my_currency_symbol($currency_symbol, $currency) {
+    switch($currency) {
+        case 'GDM': $currency_symbol = 'GDM'; break;
+    }
+    return $currency_symbol;
+}
 
 add_action('admin_menu', 'geldum_create_menu');
 function geldum_create_menu()
@@ -54,7 +67,7 @@ function geldum_create_menu()
         'manage_options',
         'admin.php?page=wc-settings&tab=checkout&section=geldum_gateway',
         '',
-        plugins_url('geldum/assets/geldum_icon.png'),
+        plugins_url('geldum/assets/images/geldum_icon.png'),
         56 // Position on menu, woocommerce has 55.5, products has 55.6
 
     );
