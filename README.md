@@ -20,7 +20,7 @@ A PHP extension used for arbitrary precision maths
 ## Step 1: Activating the plugin
 * Downloading: First of all, you will need to download the plugin. You can download the latest release as a .zip file from https://github.com/DavidSimalDelVal/geldum-woo-commerce-wp/releases If you wish, you can also download the latest source code from GitHub. This can be done with the command `git clone https://github.com/DavidSimalDelVal/geldum-woo-commerce-wp.git` or can be downloaded as a zip file from the GitHub web page.
 
-* Unzip the file geldumwp_release.zip if you downloaded the zip from the releases page [here](https://github.com/DavidSimalDelVal/geldum-woo-commerce-wp/releases).
+* Unzip the file geldum.zip if you downloaded the zip from the releases page [here](https://github.com/DavidSimalDelVal/geldum-woo-commerce-wp/releases).
 
 * Put the plugin in the correct directory: You will need to put the folder named `geldum` from this repo/unzipped release into the WordPress plugins directory. This can be found at `path/to/wordpress/folder/wp-content/plugins`
 
