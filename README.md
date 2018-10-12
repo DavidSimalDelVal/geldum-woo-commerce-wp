@@ -46,7 +46,7 @@ The easiest way to find a remote node to connect to is to visit [geldum.org](htt
 
 * Setup a Geldum wallet using the geldum-wallet-cli tool. If you do not know how to do this you can learn about it at [geldum.org](http://geldum.org/resources/user-guides/geldum-wallet-cli.html)
 
-* Start the Wallet RPC and leave it running in the background. This can be accomplished by running `./geldum-wallet-rpc --rpc-bind-port 21936 --disable-rpc-login --log-level 2 --wallet-file /path/viewOnlyWalletFile` where "/path/viewOnlyWalletFile" is the wallet file for your view-only wallet. If you wish to use a remote node you can add the `--daemon-address` flag followed by the address of the node. `--daemon-address node.geldum.org:21936` for example.
+* Start the Wallet RPC and leave it running in the background. This can be accomplished by running `./geldum-wallet-rpc --rpc-bind-port 21939 --disable-rpc-login --log-level 2 --wallet-file /path/viewOnlyWalletFile` where "/path/viewOnlyWalletFile" is the wallet file for your view-only wallet. If you wish to use a remote node you can add the `--daemon-address` flag followed by the address of the node. `--daemon-address node.geldum.org:21936` for example.
 
 ## Step 4: Setup geldum Gateway in WooCommerce
 
@@ -72,7 +72,7 @@ If you chose to use geldum-wallet-rpc:
 
 * Enter the IP address of your server in the box labeled "Geldum wallet RPC Host/IP"
 
-* Enter the port number of the Wallet RPC in the box labeled "Geldum wallet RPC port" (will be `21936` if you used the above example).
+* Enter the port number of the Wallet RPC in the box labeled "Geldum wallet RPC port" (will be `21939` if you used the above example).
 
 Finally:
 
