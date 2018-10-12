@@ -6,7 +6,7 @@ This plugin is rather simple but there are a few things that need to be set up b
 
 * A web server! Ideally with the most recent versions of PHP and mysql
 
-* A Geldum wallet. You can find the official wallet [here](https://getgeldum.org/downloads/)
+* A Geldum wallet. You can find the official wallet [here](https://geldum.org/downloads/)
 
 * [WordPress](https://wordpress.org)
 WordPress is the backend tool that is needed to use WooCommerce and this Geldum plugin
