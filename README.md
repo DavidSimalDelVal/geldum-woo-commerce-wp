@@ -31,7 +31,7 @@ A PHP extension used for arbitrary precision maths
 * Get your Geldum wallet address starting with 'gELd'
 * Get your wallet secret viewkey from your wallet
 
-A note on privacy: When you validate transactions with your private viewkey, your viewkey is sent to (but not stored on) xmrchain.net over HTTPS. This could potentially allow an attacker to see your incoming, but not outgoing, transactions if he were to get his hands on your viewkey. Even if this were to happen, your funds would still be safe and it would be impossible for somebody to steal your money. For maximum privacy use your own geldum-wallet-rpc instance.
+A note on privacy: When you validate transactions with your private viewkey, your viewkey is sent to (but not stored on) explorer.geldum.org over HTTP. This could potentially allow an attacker to see your incoming, but not outgoing, transactions if he were to get his hands on your viewkey. Even if this were to happen, your funds would still be safe and it would be impossible for somebody to steal your money. For maximum privacy use your own geldum-wallet-rpc instance.
 
 ## Step 2 Option 2: Get a Geldum daemon to connect to
 
